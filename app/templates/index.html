@@ -42,14 +42,19 @@
         <img src="{{ url_for('static', filename=anchor_photo ) }}" alt="Anchor image" class="img-thumbnail mx-auto d-block" style="max-height: 300px;">
       {% endif %}
       </div>
-      <form method="POST" enctype="multipart/form-data">
-	{{ anchor_photo_form.csrf_token }}
-        <div class="custom-file">
-	  {{ anchor_photo_form.photo(class="custom-file-input", type="file") }}
-	  <label class="custom-file-label">Choose a photo</label>
+      <div>
+	<a class="btn btn-outline-info btn-sm btn-lg btn-block" data-toggle="collapse" href="#photo1" role="button" aria-expanded="false"> Upload new photo </a>
+        <div class="collapse mt-5" id="photo1">
+          <form method="POST" enctype="multipart/form-data">
+	    {{ anchor_photo_form.csrf_token }}
+            <div class="custom-file">
+	      {{ anchor_photo_form.photo(class="custom-file-input", type="file") }}
+	      <label class="custom-file-label">Choose a photo</label>
+            </div>
+	    {{ anchor_photo_form.submit_anchor(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
+          </form>
         </div>
-	{{ anchor_photo_form.submit_anchor(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
-      </form>
+      </div>
     </div>
 
     {% if anchor_photo and test_photo %}
@@ -68,14 +73,19 @@
         <img src="{{ url_for('static', filename=test_photo) }}" alt="Test image" class="img-thumbnail mx-auto d-block" style="max-height: 300px;">
       {% endif %}
       </div>
-      <form method="POST" enctype="multipart/form-data">
-	{{ test_photo_form.csrf_token }}
-        <div class="custom-file">
-	  {{ test_photo_form.photo(class="custom-file-input", type="file") }}
-	  <label class="custom-file-label">Choose a photo</label>
-        </div>
-	{{ test_photo_form.submit_test(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
-      </form>
+      <div>
+	<a class="btn btn-outline-info btn-sm btn-lg btn-block" data-toggle="collapse" href="#photo2" role="button" aria-expanded="false"> Upload new photo </a>
+        <div class="collapse mt-5" id="photo2">
+          <form method="POST" enctype="multipart/form-data">
+            {{ test_photo_form.csrf_token }}
+            <div class="custom-file">
+              {{ test_photo_form.photo(class="custom-file-input", type="file") }}
+              <label class="custom-file-label">Choose a photo</label>
+            </div>
+            {{ test_photo_form.submit_test(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
+          </form>
+	</div>
+      </div>
     </div>
   </div>
   </div>
