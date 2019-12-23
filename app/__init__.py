@@ -11,9 +11,9 @@ def create_app(config_file=None, test_config=None):
         app.config.from_object(test_config)
 
     from app.routes import app_bp
-    from app.utils.handlers import handlers
+    from app.errors.handlers import errors
 
     app.register_blueprint(app_bp)
-    app.register_blueprint(handlers)
+    app.register_blueprint(errors)
 
     return app
