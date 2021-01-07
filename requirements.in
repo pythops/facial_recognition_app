@@ -1,0 +1,5 @@
+dlib
+Flask
+Flask-WTF
+opencv-python
+python-dotenv
