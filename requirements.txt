@@ -4,33 +4,31 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-click==7.1.2
+click==8.0.1
     # via flask
-dlib==19.21.1
+dlib==19.22.0
     # via -r requirements.in
-flask-wtf==0.14.3
+flask-wtf==0.15.1
     # via -r requirements.in
-flask==1.1.2
+flask==2.0.1
     # via
     #   -r requirements.in
     #   flask-wtf
-itsdangerous==1.1.0
+itsdangerous==2.0.1
     # via
     #   flask
     #   flask-wtf
-jinja2==2.11.2
+jinja2==3.0.1
     # via flask
-markupsafe==1.1.1
+markupsafe==2.0.1
     # via
     #   jinja2
     #   wtforms
-numpy==1.19.5
+numpy==1.20.3
     # via opencv-python
-opencv-python==4.5.1.48
+opencv-python==4.5.2.52
     # via -r requirements.in
-python-dotenv==0.15.0
-    # via -r requirements.in
-werkzeug==1.0.1
+werkzeug==2.0.1
     # via flask
 wtforms==2.3.3
     # via flask-wtf
