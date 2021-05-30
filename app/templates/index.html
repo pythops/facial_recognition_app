@@ -5,6 +5,8 @@
 {% block content %}
 <div class="container d-sm-flex justify-content-between align-items-center" style="height: 100%">
 
+
+
   <div style="width: 40%">
     <div class="d-flex align-items-center" style="height: 350px">
     {% if anchor_photo %}
@@ -12,13 +14,13 @@
     {% endif %}
     </div>
     <div>
-      <a class="btn btn-outline-info btn-sm btn-lg btn-block" data-toggle="collapse" href="#photo1" role="button" aria-expanded="false"> Upload new photo </a>
+      <a class="btn btn-outline-info btn-sm btn-lg btn-block" data-bs-toggle="collapse" href="#photo1" role="button" aria-expanded="false"> Upload new photo </a>
       <div class="collapse mt-5" id="photo1">
         <form method="POST" enctype="multipart/form-data">
           {{ anchor_photo_form.csrf_token }}
-          <div class="custom-file">
-            {{ anchor_photo_form.photo(class="custom-file-input", type="file") }}
-            <label class="custom-file-label">Choose a photo</label>
+          <div>
+            <label for="anchor_photo" class="form-label">Choose a photo</label>
+            {{ anchor_photo_form.photo(class="form-control", type="file", id="anchor_photo") }}
           </div>
           {{ anchor_photo_form.submit_anchor(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
         </form>
@@ -43,13 +45,13 @@
     {% endif %}
     </div>
     <div>
-      <a class="btn btn-outline-info btn-sm btn-lg btn-block" data-toggle="collapse" href="#photo2" role="button" aria-expanded="false"> Upload new photo </a>
+      <a class="btn btn-outline-info btn-sm btn-lg btn-block" data-bs-toggle="collapse" href="#photo2" role="button" aria-expanded="false"> Upload new photo </a>
       <div class="collapse mt-5" id="photo2">
         <form method="POST" enctype="multipart/form-data">
           {{ test_photo_form.csrf_token }}
-          <div class="custom-file">
-            {{ test_photo_form.photo(class="custom-file-input", type="file") }}
-            <label class="custom-file-label">Choose a photo</label>
+          <div>
+            <label for="test_photo" class="form-label">Choose a photo</label>
+            {{ test_photo_form.photo(class="form-control", type="file", id="test_photo") }}
           </div>
           {{ test_photo_form.submit_test(class="btn btn-success btn-sm btn-lg btn-block mt-2") }}
         </form>
