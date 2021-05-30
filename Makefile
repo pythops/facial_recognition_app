@@ -12,4 +12,7 @@ pip-update:
 	@pip-compile --output-file=requirements.txt -U requirements.in
 
 run:
-	@flask run
+	@(\
+		source .venv/bin/activate && \
+		flask run \
+	)
