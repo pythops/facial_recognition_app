@@ -9,7 +9,7 @@ setup:
 	)
 
 pip-update:
-	@pip-compile --output-file=requirements.txt -U requirements.in
+	@pip-compile --output-file=requirements.txt -U requirements.in --resolver=backtracking
 
 run:
 	@(\
